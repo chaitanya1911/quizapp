@@ -1,0 +1,9 @@
+{% extends "teacher/teacher_base.html"%}
+{% block body_block %}
+<h1>Delete {{quiz_detail.quiz_name}}</h1>
+<form method="post">
+    {% csrf_token %}
+    <input type="submit" class="btn btn-danger" value="Delete">
+    <a href="{% url 'teacher:quizdetail' quiz.pk %}">Cancel</a>
+</form>
+{% endblock %}

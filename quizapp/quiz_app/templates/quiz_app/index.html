@@ -1,0 +1,15 @@
+{% extends 'base.html'%}
+
+{% block body_block %}
+
+<h1>Available Quizes:</h1>
+{% if quiz %}
+<ul>
+{% for i in quiz %}
+<li><a href="{% url 'student:quiz-details' i.id%}">{{i.quiz_name}}</a></li>
+{% endfor %}
+</ul>
+{% else %}
+<h3>N0 Quizes Available</h3>
+{% endif %}
+{% endblock %}

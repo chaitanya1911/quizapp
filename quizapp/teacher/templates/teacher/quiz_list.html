@@ -1,0 +1,12 @@
+{% extends "teacher/teacher_base.html"%}
+{% block body_block %}
+    <h1>List of quizs</h1>
+<ol>
+    {% for quiz in quizs %}
+    <h2><li><a href="{% url 'teacher:quizdetail' pk=quiz.id %}">{{quiz.quiz_name}}</a></li></h2>
+   <a href="{% url 'teacher:quizcreate' %}"> <button class="btn btn-primary">Add quiz</button></a>
+    {% endfor %}
+</ol>
+
+
+{% endblock %}

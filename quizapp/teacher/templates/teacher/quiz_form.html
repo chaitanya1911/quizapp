@@ -1,0 +1,18 @@
+{% extends "teacher/teacher_base.html"%}
+{% block body_block %}
+<h1>
+    {% if not form.instance.pk %}
+       Create Quiz|Question|Answer
+    {% else %}
+       Updatee Quiz|Question|Answer
+    {% endif %}
+</h1>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    
+<p>Enter date in yyyy-mm-dd **</p>
+<p>Enter time in hh:mm:ss **</p>
+    <input type="submit" class="btn btn-primary" value="submit">
+</form>
+{% endblock %}
